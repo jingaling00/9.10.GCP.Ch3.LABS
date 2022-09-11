@@ -1,0 +1,78 @@
+# 3.12.1 LAB
+base_char = input()
+head_char = input()
+
+row1 = '      ' + head_char
+row2 = (base_char*6) + (head_char*2)
+row3 = (base_char*6) + (head_char*3)
+
+print(f'{row1}\n{row2}\n{row3}\n{row2}\n{row1}')
+
+# 3.13.1 LAB
+phone_number = input()
+
+print(f'({phone_number[0:3]}) {phone_number[3:6]}-{phone_number[6:10]}')
+
+# 3.14.1 LAB
+caffeine_mg = float(input())
+i = 6
+while i <= 24:
+    caffeine = caffeine_mg/(2**(i/6))
+    print(f'After {i} hours: {caffeine:.2f} mg')
+    i*=2
+
+# 3.15.1 LAB
+current_price = int(input())
+last_months_price = int(input())
+
+change = current_price - last_months_price
+mortgage = (current_price*0.051)/12
+print(f'This house is ${current_price}. The change is ${change} since last month.\nThe estimated monthly mortgage is ${mortgage:.2f}.')
+
+# 3.16.1 LAB
+num1 = float(input())
+num2 = float(input())
+num3 = float(input())
+num4 = float(input())
+
+product = num1 * num2 * num3 * num4
+summ = num1+num2+num3+num4
+average = summ/4
+print(f'{product:.0f} {average:.0f}')
+print(f'{product:.03f} {average:.3f}')
+
+# 3.17.1 LAB
+favorite_color = input('Enter favorite color:\n')
+name = input()
+num = input()
+print(f'You entered: {favorite_color} {name} {num}')
+
+# FIXME (2): Output two password options
+password1 = favorite_color + '_' + name
+print(f'\nFirst password: {password1}')
+password2 = num + favorite_color + num
+print(f'Second password: {password2}')
+
+# FIXME (3): Output the length of the two password options
+print(f'\nNumber of characters in {password1}: {len(password1)}')
+print(f'Number of characters in {password2}: {len(password2)}')
+
+# 3.18.1 LAB
+import math
+from math import ceil   
+ 
+height = float(input())
+width = float(input())
+cost = float(input())
+area = height*width
+print(f'Wall area: {area:.1f} sq ft')
+paint_needed = area/350
+print(f'Paint needed: {paint_needed:.3f} gallons')
+cans_needed = math.ceil(paint_needed)
+print(f'Cans needed: {cans_needed} can(s)')
+paint_cost = cost*cans_needed
+print(f'Paint cost: ${paint_cost:.2f}')
+tax = 0.07*paint_cost
+print(f'Sales tax: ${tax:.2f}')
+total = paint_cost+tax
+print(f'Total cost: ${total:.2f}')
